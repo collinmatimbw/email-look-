@@ -58,4 +58,9 @@ app = create_application()
 
 @app.on_event("startup")
 async def startup():
-    Base.metadata.create_all(bind=engine)
+    try:
+        Base.metadata.create_all(bind=engine)
+    except Exception as e:
+        import sys
+        print(f"WARNING: Database migration failed: {e}", file=sys.stderr)
+        print("App will start without database tables. DB-dependent routes may fail.", file=sys.stderr)
