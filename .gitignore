@@ -53,5 +53,10 @@ htmlcov/
 # Docker
 .docker/
 
+# Build artifacts
+*.pid
+*.tsbuildinfo
+next-env.d.ts
+
 # Vercel
 .vercel
