@@ -3,4 +3,4 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from app.main import app as handler
+from app.main import app
